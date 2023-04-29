@@ -1,0 +1,88 @@
+* {
+    font-family: 'Cabin', sans-serif;
+    font-size: 16px;
+    color: black;
+}
+
+.page-container {
+    width: 100vw;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h2 {
+    font-family: 'Bruno Ace', cursive;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    cursor: default;
+}
+
+form {
+    border: 2.5px solid black;
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 275px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.main-components {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: scale(1.2);
+}
+
+.side-components {
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+input {
+    padding: 0.5rem 1.5rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+}
+
+.main-components button {
+    margin-top: 0.5rem;
+    padding: 0.2rem 1rem;
+    border: 1px solid black;
+    border-radius: 0.2rem;
+    font-family: 'Merriweather', serif;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+p {
+    font-size: 14px;
+    color: rgb(100, 100, 100);
+    cursor: default;
+}
+
+.side-components button {
+    font-size: 12px;
+    color: rgb(100, 100, 100);
+    border: 1px solid rgb(100, 100, 100);
+    border-radius: 0.2rem;
+    padding: 0.2rem 0.5rem;
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
