@@ -1,6 +1,7 @@
 import React from 'react'
 import './Login.css'
 import { gsap } from "gsap";
+import { Link } from 'react-router-dom';
 
 function Login() {
     function hover(e) {
@@ -27,13 +28,13 @@ function Login() {
                         <input type='password' placeholder='Password'/>
                     </div>
                     <div className='btn-container'>
-                        <button className='btn' onMouseOver={hover} onMouseLeave={lift}>Login</button>
+                        <button className='btn1' onMouseOver={hover} onMouseLeave={lift}>Login</button>
                     </div>
                 </div>
                 <div className='side-components'>
                     <p>Don't have an account?</p>
                     <div className='btn2-container'>
-                        <button className='btn' onMouseOver={hover} onMouseLeave={lift}>Sign Up</button>
+                        <Link to="/signup" className='btn2' onMouseOver={hover} onMouseLeave={lift}>Sign Up</Link>
                     </div>
                 </div>
             </form>

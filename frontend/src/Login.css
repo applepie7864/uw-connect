@@ -57,7 +57,7 @@ input {
     border-radius: 0.5rem;
 }
 
-.main-components button {
+.btn1 {
     margin-top: 0.5rem;
     padding: 0.2rem 1rem;
     border: 1px solid black;
@@ -74,7 +74,7 @@ p {
     cursor: default;
 }
 
-.side-components button {
+.btn2 {
     font-size: 12px;
     color: rgb(100, 100, 100);
     border: 1px solid rgb(100, 100, 100);
@@ -83,6 +83,7 @@ p {
     font-family: 'Merriweather', serif;
     font-weight: bold;
     cursor: pointer;
+    text-decoration: none;
 }
 
 
