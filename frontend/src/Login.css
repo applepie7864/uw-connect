@@ -86,4 +86,6 @@ p {
     text-decoration: none;
 }
 
-
+.btn2:hover {
+    background: rgb(240, 240, 240);
+}

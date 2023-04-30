@@ -34,7 +34,7 @@ function Login() {
                 <div className='side-components'>
                     <p>Don't have an account?</p>
                     <div className='btn2-container'>
-                        <Link to="/signup" className='btn2' onMouseOver={hover} onMouseLeave={lift}>Sign Up</Link>
+                        <Link to="/signup" className='btn2'>Sign Up</Link>
                     </div>
                 </div>
             </form>
