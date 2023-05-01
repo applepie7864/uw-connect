@@ -1,11 +1,12 @@
 import React from 'react'
 import './Signup.css'
 import { gsap } from "gsap";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import videoBg from './whitebg-video.mp4'
 import { useEffect} from 'react';
 import validate from './SignupValidation';
 import { useState } from 'react';
+import axios from 'axios';
 
 function Signup() {
     const [values, setValues] = useState({
@@ -32,9 +33,14 @@ function Signup() {
         tl2.to(e.target, {scale: 1});
     }
 
+    const navigate = useNavigate();
+
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors(validate(values));
+        if (errors.name == "" && errors.email == "" && errors.password == "" && errors.passwordConfirmation == "") {
+            axios.post('http://localhost:8081/signup', values).then(res => navigate('/')).catch(err => console.log(err));
+        }
     }
 
     const handleInput = (e) => {
