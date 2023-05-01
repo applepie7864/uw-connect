@@ -6,6 +6,16 @@ import videoBg from './whitebg-video.mp4'
 import { useEffect} from 'react';
 
 function Signup() {
+    function hover(e) {
+        const tl = gsap.timeline({defaults: {duration: 0.75, ease: "power1.out"}});
+        tl.fromTo(e.target, {scale: 1}, {scale: 1.1});
+    }
+
+    function lift(e) {
+        const tl2 = gsap.timeline({defaults: {duration: 0.75, ease: "power1.out"}});
+        tl2.to(e.target, {scale: 1});
+    }
+
     useEffect(() => {
         const tl = gsap.timeline({defaults: {duration: 2, ease: "Power2.easeOut"}});
         const curve = document.querySelector('#curve');
@@ -32,7 +42,7 @@ function Signup() {
         tl.to("#n_2", { opacity: 1, y: 0, duration: 0.5 }, '<50%');
         tl.to("#e", { opacity: 1, y: 0, duration: 0.5 }, '<50%');
         tl.to("#c_2", { opacity: 1, y: 0, duration: 0.5 }, '<50%');
-        tl.fromTo("#stick", { scale: 0 }, { scale: 1, duration: 1, ease: "elastic.out(1, 0.5)" });
+        tl.fromTo("#stick", { scale: 0 }, { scale: 1, duration: 1, ease: "elastic.out(1, 0.8)" });
         tl.to("#uw", { opacity: 1, duration: 3, ease: "slow(0.7, 0.7, false)" }, '<');
         gsap.fromTo("#wave", { rotation: -10 }, { rotation: 10, duration: 1, repeat: -1, yoyo: true }, '<');
     }, [window]);
@@ -74,7 +84,35 @@ function Signup() {
             </svg>
         </div>
         <div className="right-side">
-
+            <div className='text-container'>
+                <div className='slogan'>Creating new avenues for connection.</div>
+                <div className='more-texr'>Sign up today.</div>
+            </div>
+            <form className="form" action = "">
+                <div className='main-components2'>
+                    <div className='email-container'>
+                        <label htmlFor='email'></label>
+                        <input type='email' placeholder='Email'/>
+                    </div>
+                    <div className='pwd-container'>
+                        <label htmlFor='password'></label>
+                        <input type='password' placeholder='Password'/>
+                    </div>
+                    <div className='pwd-confirmation-container'>
+                        <label htmlFor='password-comfirmation'></label>
+                        <input type='password' placeholder='Confirm Password'/>
+                    </div>
+                    <div className='btn-container'>
+                        <button className='button1' onMouseOver={hover} onMouseLeave={lift}>Sign Up</button>
+                    </div>
+                </div>
+                <div className='side-components2'>
+                    <p>Already have an account?</p>
+                    <div className='button2-container'>
+                        <Link to="/" className='btn2'>Login</Link>
+                    </div>
+                </div>
+            </form>
         </div>
         <video id="intro-video" src={videoBg} autoPlay muted loop ></video>
         </div>
