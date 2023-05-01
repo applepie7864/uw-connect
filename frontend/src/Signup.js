@@ -43,7 +43,7 @@ function Signup() {
         tl.to("#e", { opacity: 1, y: 0, duration: 0.5 }, '<50%');
         tl.to("#c_2", { opacity: 1, y: 0, duration: 0.5 }, '<50%');
         tl.fromTo("#stick", { scale: 0 }, { scale: 1, duration: 1, ease: "elastic.out(1, 0.8)" });
-        tl.to("#uw", { opacity: 1, duration: 3, ease: "slow(0.7, 0.7, false)" }, '<');
+        tl.to("#uw", { opacity: 1, duration: 3, ease: "slow(0.7, 0.7, false)" });
         gsap.fromTo("#wave", { rotation: -10 }, { rotation: 10, duration: 1, repeat: -1, yoyo: true }, '<');
     }, [window]);
     return (
