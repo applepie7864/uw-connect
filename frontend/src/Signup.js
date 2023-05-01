@@ -4,8 +4,24 @@ import { gsap } from "gsap";
 import { Link } from 'react-router-dom';
 import videoBg from './whitebg-video.mp4'
 import { useEffect} from 'react';
+import validate from './SignupValidation';
+import { useState } from 'react';
 
 function Signup() {
+    const [values, setValues] = useState({
+        name: '',
+        email: '',
+        password: '',
+        passwordConfirmation: ''
+    })
+
+    const [errors, setErrors] = useState({
+        name: '',
+        email: '',
+        password: '',
+        passwordConfirmation: ''
+    })
+
     function hover(e) {
         const tl = gsap.timeline({defaults: {duration: 0.75, ease: "power1.out"}});
         tl.fromTo(e.target, {scale: 1}, {scale: 1.1});
@@ -14,6 +30,15 @@ function Signup() {
     function lift(e) {
         const tl2 = gsap.timeline({defaults: {duration: 0.75, ease: "power1.out"}});
         tl2.to(e.target, {scale: 1});
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setErrors(validate(values));
+    }
+
+    const handleInput = (e) => {
+        setValues(prev => ({...prev, [e.target.name]: [e.target.value]}));
     }
 
     useEffect(() => {
@@ -88,26 +113,30 @@ function Signup() {
                 <div className='slogan'>Creating new avenues for connection.</div>
                 <div className='more-texr'>Sign up today.</div>
             </div>
-            <form className="form" action = "">
+            <form className="form" action = "" onSubmit={handleSubmit}>
                 <div className='main-components2'>
-                    <div className='email-container'>
-                        <label htmlFor='email'></label>
-                        <input type='email' placeholder='Email'/>
+                    <div className='name-container2'>
+                        {errors.name && <span className='error-text2'>{errors.name}</span>}
+                        <input type='text' onChange={handleInput} placeholder='Name' name='name'/>
                     </div>
-                    <div className='pwd-container'>
-                        <label htmlFor='password'></label>
-                        <input type='password' placeholder='Password'/>
+                    <div className='email-container2'>
+                        {errors.email && <span className='error-text2'>{errors.email}</span>}
+                        <input type='email' onChange={handleInput} placeholder='Email' name='email'/>
                     </div>
-                    <div className='pwd-confirmation-container'>
-                        <label htmlFor='password-comfirmation'></label>
-                        <input type='password' placeholder='Confirm Password'/>
+                    <div className='pwd-container2'>
+                        {errors.password && <span className='error-text2'>{errors.password}</span>}
+                        <input type='password' onChange={handleInput} placeholder='Password' name='password'/>
+                    </div>
+                    <div className='pwd-confirmation-container2'>
+                        {errors.passwordConfirmation && <span className='error-text2'>{errors.passwordConfirmation}</span>}
+                        <input type='password' onChange={handleInput} placeholder='Confirm Password' name='passwordConfirmation'/>
                     </div>
                     <div className='btn-container'>
-                        <button className='button1' onMouseOver={hover} onMouseLeave={lift}>Sign Up</button>
+                        <button className='button1' type='submit' onMouseOver={hover} onMouseLeave={lift}>Sign Up</button>
                     </div>
                 </div>
                 <div className='side-components2'>
-                    <p>Already have an account?</p>
+                    <p className='question'>Already have an account?</p>
                     <div className='button2-container'>
                         <Link to="/" className='btn2'>Login</Link>
                     </div>

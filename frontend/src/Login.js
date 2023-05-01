@@ -41,12 +41,10 @@ function Login() {
                 <div className='main-components'>
                     <div className='email-container'>
                         {errors.email && <span className='error-text'>{errors.email}</span>}
-                        <label htmlFor='email'></label>
                         <input type='email' name='email' onChange={handleInput} placeholder='Email'/>
                     </div>
                     <div className='pwd-container'>
                         {errors.password && <span className='error-text'>{errors.password}</span>}
-                        <label htmlFor='password'></label>
                         <input type='password' name='password' onChange={handleInput} placeholder='Password'/>
                     </div>
                     <div className='btn-container'>
