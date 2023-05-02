@@ -41,11 +41,11 @@ function Login() {
                 <div className='main-components'>
                     <div className='email-container'>
                         {errors.email && <span className='error-text'>{errors.email}</span>}
-                        <input type='email' name='email' onChange={handleInput} placeholder='Email'/>
+                        <input type='email' name='email' onChange={handleInput} placeholder='Email' autoComplete='off'/>
                     </div>
                     <div className='pwd-container'>
                         {errors.password && <span className='error-text'>{errors.password}</span>}
-                        <input type='password' name='password' onChange={handleInput} placeholder='Password'/>
+                        <input type='password' name='password' onChange={handleInput} placeholder='Password' autoComplete='off'/>
                     </div>
                     <div className='btn-container'>
                         <button className='btn1' type='submit' onMouseOver={hover} onMouseLeave={lift}>Login</button>

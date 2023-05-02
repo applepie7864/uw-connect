@@ -123,19 +123,19 @@ function Signup() {
                 <div className='main-components2'>
                     <div className='name-container2'>
                         {errors.name && <span className='error-text2'>{errors.name}</span>}
-                        <input type='text' onChange={handleInput} placeholder='Name' name='name'/>
+                        <input type='text' onChange={handleInput} placeholder='Name' name='name' autoComplete='off'/>
                     </div>
                     <div className='email-container2'>
                         {errors.email && <span className='error-text2'>{errors.email}</span>}
-                        <input type='email' onChange={handleInput} placeholder='Email' name='email'/>
+                        <input type='email' onChange={handleInput} placeholder='Email' name='email' autoComplete='off'/>
                     </div>
                     <div className='pwd-container2'>
                         {errors.password && <span className='error-text2'>{errors.password}</span>}
-                        <input type='password' onChange={handleInput} placeholder='Password' name='password'/>
+                        <input type='password' onChange={handleInput} placeholder='Password' name='password' autoComplete='off'/>
                     </div>
                     <div className='pwd-confirmation-container2'>
                         {errors.passwordConfirmation && <span className='error-text2'>{errors.passwordConfirmation}</span>}
-                        <input type='password' onChange={handleInput} placeholder='Confirm Password' name='passwordConfirmation'/>
+                        <input type='password' onChange={handleInput} placeholder='Confirm Password' name='passwordConfirmation' autoComplete='off'/>
                     </div>
                     <div className='btn-container'>
                         <button className='button1' type='submit' onMouseOver={hover} onMouseLeave={lift}>Sign Up</button>
