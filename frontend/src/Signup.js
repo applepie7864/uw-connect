@@ -144,7 +144,7 @@ function Signup() {
                 <div className='side-components2'>
                     <p className='question'>Already have an account?</p>
                     <div className='button2-container'>
-                        <Link to="/" className='btn2'>Login</Link>
+                        <Link to="/uw-connect" className='btn2'>Login</Link>
                     </div>
                 </div>
             </form>
