@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/uw-connect/static/css/main.fa4b38ef.css",
+    "main.js": "/uw-connect/static/js/main.2351dd1a.js",
+    "static/media/whitebg-video.mp4": "/uw-connect/static/media/whitebg-video.34b31ddc6af52e7612ac.mp4",
+    "index.html": "/uw-connect/index.html",
+    "main.fa4b38ef.css.map": "/uw-connect/static/css/main.fa4b38ef.css.map",
+    "main.2351dd1a.js.map": "/uw-connect/static/js/main.2351dd1a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fa4b38ef.css",
+    "static/js/main.2351dd1a.js"
+  ]
+}
