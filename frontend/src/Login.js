@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
 import './Login.css'
 import { gsap } from "gsap";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import validate from './LoginValidation';
+import axios from 'axios';
 
 function Login() {
     const [values, setValues] = useState({
         email: '',
         password: ''
     })
+
+    const navigate = useNavigate();
 
     const [errors, setErrors] = useState({
         email: '',
@@ -28,6 +31,17 @@ function Login() {
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors(validate(values));
+        if (errors.email == "" && errors.password == "") {
+            axios.post('http://localhost:8081/login', values)
+            .then(res => {
+                if (res.data != "Failure") {
+                    navigate('/home');
+                } else {
+                    alert("Account does not exist");
+                }
+            })
+            .catch(err => console.log(err));
+        }
     }
 
     const handleInput = (e) => {
